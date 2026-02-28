@@ -1,4 +1,4 @@
-# Project: Epic Games Notifier | Author: github.com/waterk
+# Project: Epic Games Notifier | Author: https://github.com/pavnxet/Epic-Free-Games-Telegram-Bot
 import pytest
 import asyncio
 from bot import fetch_free_games, load_json_file, escape_markdown

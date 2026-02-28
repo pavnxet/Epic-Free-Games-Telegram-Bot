@@ -1,4 +1,4 @@
-# Project: Epic Games Notifier | Author: github.com/waterk
+# Project: Epic Games Notifier | Author: https://github.com/pavnxet/Epic-Free-Games-Telegram-Bot
 import json
 import logging
 from datetime import datetime, timezone
@@ -15,8 +15,8 @@ import re
 def escape_markdown(text: str) -> str:
     """Escapes markdown v2 special characters."""
     if not text: return ""
-    escape_chars = r"_*[]()~`>#+-=|{}.!"
-    return re.sub(r"([_*\[\]()~`>#+\-=|{}.!])", r"\\\1", text)
+    escape_chars = r"_*[]()~`>#+=|{}.!"
+    return re.sub(r"([_*\[\]()~`>#+=|{}.!])", r"\\\1", text).replace("-", r"\-")
 
 # Set up logging
 logging.basicConfig(
@@ -169,7 +169,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🎮 *Welcome to the Epic Games Free Notifier\\!*\n\n"
         "I will notify you automatically every Thursday when new free games are available\\.\n\n"
         "You can also use /fetch at any time to see the currently free games\\.\n\n"
-        "🚀 Developed by [github\\.com/waterk](https://github.com/waterk)"
+        "🚀 Developed by [pavnxet\\/Epic\\-Free\\-Games\\-Telegram\\-Bot](https://github.com/pavnxet/Epic-Free-Games-Telegram-Bot)"
     )
 
     await update.message.reply_text(
@@ -188,7 +188,7 @@ async def fetch_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     games = await fetch_free_games()
 
     if not games:
-        await update.message.reply_text("No free games are currently available\\.\\.\\.🚀 Developed by [github\\.com/waterk](https://github.com/waterk)", parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
+        await update.message.reply_text("No free games are currently available\\.\\.\\.🚀 Developed by [pavnxet\\/Epic\\-Free\\-Games\\-Telegram\\-Bot](https://github.com/pavnxet/Epic-Free-Games-Telegram-Bot)", parse_mode=ParseMode.MARKDOWN_V2, disable_web_page_preview=True)
         return
 
     for game in games:
@@ -199,7 +199,7 @@ async def send_game_message(bot, chat_id: int, game: dict):
     caption = (
         f"🎮 *{escape_markdown(game['title'])}*\n\n"
         f"{escape_markdown(game['description'])}\n\n"
-        f"🚀 Developed by [github\\.com/waterk](https://github.com/waterk)"
+        f"🚀 Developed by [pavnxet\\/Epic\\-Free\\-Games\\-Telegram\\-Bot](https://github.com/pavnxet/Epic-Free-Games-Telegram-Bot)"
     )
 
     keyboard = [[InlineKeyboardButton("Claim Game", url=game['url'])]]
