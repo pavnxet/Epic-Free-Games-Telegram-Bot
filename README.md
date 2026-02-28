@@ -77,3 +77,19 @@ python3 -m pytest bot_test.py
 
 ---
 *Developed by [pavnxet](https://github.com/pavnxet)*
+
+## 🚀 Running the Bot (VPS Deployment)
+
+For a stable deployment on a VPS or minimal Linux environment, consider using a process manager like PM2:
+
+1. **Install PM2:**
+   ```bash
+   npm install pm2 -g
+   ```
+
+2. **Start the Bot:**
+   ```bash
+   pm2 start bot.py --name "epic-bot" --interpreter python3
+   ```
+
+3. **Stability Tip:** Ensure the system does not enter sleep or hibernation to maintain the Thursday broadcast schedule. If you are using a minimal environment, ensure `tzdata` is installed (now included in `requirements.txt`).
