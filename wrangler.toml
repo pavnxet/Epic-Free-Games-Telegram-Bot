@@ -1,0 +1,10 @@
+name = "epic-free-games-bot"
+main = "worker.js"
+compatibility_date = "2026-04-15"
+
+kv_namespaces = [
+  { binding = "BOT_STATE", id = "PUT_YOUR_KV_NAMESPACE_ID_HERE" }
+]
+
+[triggers]
+crons = ["35 21 * * 4"]
