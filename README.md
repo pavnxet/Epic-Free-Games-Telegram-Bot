@@ -1,6 +1,6 @@
 # 🎮 Epic Free Games Telegram Bot
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://github.com/pavnxet/Epic-Free-Games-Telegram-Bot/tree/cloudfare-deploy)
 
 A lightweight, asynchronous Telegram bot built with Python that fetches and broadcasts currently free games from the Epic Games Store. It automatically notifies subscribers every Thursday, avoiding duplicate notifications through local JSON state management.
 
